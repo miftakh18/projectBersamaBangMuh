@@ -1,0 +1,134 @@
+.sidebar  .sidebar-content{
+        box-shadow: -1px 6px 11px rgb(199, 199, 199);
+}
+.sidebar .sidebar-content,
+.sidebar-brand,.sidebar-link
+{
+    background:#fff !important;
+    color :rgb(157, 157, 157) !important;
+
+}
+/* icon */
+.sidebar-link i,
+.sidebar-link svg,
+a.sidebar-link i,
+a.sidebar-link svg
+{
+    color:rgba(150, 150, 150, 0.5);
+    margin-right:.75rem
+}
+/* .sidebar-link:focus
+{
+    outline:0
+}  */
+
+.sidebar-link:hover
+{
+    color:#0cdbdb;
+    border-right:5px solid #0cdbdb;
+ 
+
+}
+
+
+.sidebar-link:hover i,
+.sidebar-link:hover svg,
+.sidebar-link:hover span{
+    color:#0cdbdb;
+
+
+}
+
+.sidebar-brand span{
+    color:#0cdbdb ;
+
+}
+.sidebar-header{
+    color:rgba(100, 100, 100, 0.5) !important;
+    font-weight:bold;
+
+}
+
+
+.sidebar-toggle:hover .hamburger,
+.sidebar-toggle:hover .hamburger:after,
+.sidebar-toggle:hover .hamburger:before
+{
+    background:#0cdbdb
+}
+
+.sidebar-link,
+a.sidebar-link
+{
+     /* background:#0cdbdb; */
+    border-left:3px solid transparent;
+    color:rgba(6, 12, 17, 0.5);
+    cursor:pointer;
+    display:block;
+    font-weight:400;
+    padding:.625rem 1.625rem;
+    position:relative;
+    text-decoration:none;
+    /* transition:background .1s ease-in-out */
+}
+
+
+.sidebar-item.active .sidebar-link,
+.sidebar-item.active> .sidebar-link
+{
+    background:linear-gradient(90deg,rgba(121, 121, 121, 0.088),rgba(138, 138, 138, 0.088) 100%,transparent) !important;
+    /* background: blue !important; */
+    border-right:5px solid #0cdbdb !important;
+    color:#0cdbdb;
+font-weight: bold;
+    /* background-color: blue; */
+
+}
+
+
+
+.sidebar-item.active .sidebar-link:hover i,
+.sidebar-item.active .sidebar-link:hover svg,
+.sidebar-item.active>.sidebar-link i,
+.sidebar-item.active>.sidebar-link svg,
+.sidebar-item.active>.sidebar-link span
+{
+    color:#0cdbdb;
+    /* background-color: blue; */
+
+}
+.sidebar-brand
+{
+    color:#f8f9fa;
+    display:block;
+    font-size:1.15rem;
+    font-weight:600;
+    padding:1.15rem 1.5rem
+}
+
+/* *:hover{
+    color :#0cdbdb;
+} */
+ .nav-icon:hover{
+    color :#0cdbdb;
+border-bottom: 3px solid  #0cdbdb;
+}
+.nav-item:hover .nav-link, .nav-item:hover span{
+    color :#0cdbdb !important;
+
+}
+
+
+.dropdown-menu{
+    border:none;
+}
+
+.dropdown-menu .dropdown-item:hover{
+     background:linear-gradient(90deg,rgba(121, 121, 121, 0.088),rgba(138, 138, 138, 0.088) 100%,transparent) !important;
+    /* background: blue !important; */
+    border-right:5px solid #0cdbdb !important;
+    color:#0cdbdb;
+}
+.indicator{
+    background-color: #0cdbdb !important;
+}

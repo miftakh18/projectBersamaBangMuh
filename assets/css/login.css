@@ -1,0 +1,60 @@
+ .card{
+        box-shadow:4px 4px 4px rgba(73, 73, 73,0) !important;
+        border-radius:  none  !important;
+        padding: 40px 40px 40px 40px;
+        /* width: ; */
+    /* height:8 !important; */
+}
+
+input[type='text'],input[type='password']{
+    border:none !important;
+    display: block;
+    border-bottom: 1px solid #03caca !important;
+    width: 100%;
+    background-color: rgb(223, 223, 223) !important;
+    margin-bottom: 30px !important;
+}
+
+.kiri{
+    background-image: url('../img/background/login2.jpg');
+    background-size: cover;
+}
+input[type='checkbox']:checked{
+ background-color: #03caca !important;
+}
+button{
+    border-radius: 50px !important;
+    border: 1px solid #03caca !important;
+}
+button:hover{
+  color: white !important;
+  background-color: #03caca !important;
+}
+label{
+    color:#03caca;
+}
+@media only screen and (max-width: 988px) {
+  /* For mobile phones: */
+  [class*="kiri"]{
+    display: none !important;
+  
+  }
+    [class*="kanan"]{
+    display: block !important;
+  
+  }
+}
+.lines{
+        padding: 100px auto;
+        
+        height:2px;
+        width: 100%;
+        background-color: #03caca !important;
+        /* border: 1px solid black; */
+}
+.clines{
+        padding: 0px 130px 50px 110px;
+}
+h1.h2{
+    letter-spacing: 25px;
+}
