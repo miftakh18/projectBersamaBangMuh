@@ -16,7 +16,7 @@ class Authentication extends CI_Controller
     public function index()
     {
 
-        if ($this->session->userdata('logged_in')) {
+        if ($this->session->userdata('poslogged')) {
             redirect(base_url("home"));
         } else {
             $data = array(
@@ -39,7 +39,7 @@ class Authentication extends CI_Controller
                 'posnama'  => $validate[0]->nama,
                 'poslevel' => $validate[0]->is_level,
                 'posid' => $validate[0]->usid,
-                'logged_in' => TRUE,
+                'poslogged' => TRUE,
 
             );
             $this->session->set_userdata($newdata);
@@ -49,17 +49,17 @@ class Authentication extends CI_Controller
             redirect(base_url('authentication'));
         }
     }
-    public function logout(){
+    public function logout()
+    {
 
-        	$this->session->unset_userdata(array(
-				'posuser',
-				'posnama',
-				'poslevel',
-                'posid',
-                'logged_in'
-			));
-            $this->session->sess_destroy();
-             redirect(base_url("/"));
-
+        $this->session->unset_userdata(array(
+            'posuser',
+            'posnama',
+            'poslevel',
+            'posid',
+            'poslogged'
+        ));
+        $this->session->sess_destroy();
+        redirect(base_url("/"));
     }
 }

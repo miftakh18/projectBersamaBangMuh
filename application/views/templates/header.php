@@ -17,6 +17,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?= assets_url(); ?>css/template_custom.css">
     <link rel="stylesheet" href="<?= assets_url(); ?>fonts/fontawesome6.4.2/css/all.min.css">
+    <!-- <link rel="stylesheet" href="<?= assets_url(); ?>libs/datatables/jquery.dataTables.min.css"> -->
+    <link rel="stylesheet" href="<?= assets_url(); ?>bootstrap5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= assets_url(); ?>datatable/dataTable/css/dataTables.bootstrap5.min.css">
+
+    <!-- <link rel="stylesheet" href="<?= assets_url(); ?>libs/datatables/dataTables.bootstrap4.css"> -->
 </head>
 
 <body>
@@ -34,20 +39,25 @@
 
                     <li class="sidebar-item active">
 
-                        <a data-bs-target="#dashboards" data-bs-toggle="collapse" class="sidebar-link">
+                        <a class="sidebar-link">
                             <i class="fa-solid fa-house"></i> <span class="align-middle">Dashboards</span>
                         </a>
-                        <ul id="dashboards" class="sidebar-dropdown list-unstyled collapse show" data-bs-parent="#sidebar">
-                            <li class="sidebar-item active"><a class="sidebar-link" href="/"><i class="fa-solid fa-arrow-right  mx-4"></i>Analytics</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="/dashboard-ecommerce"><i class="fa-solid fa-arrow-right  mx-4"></i>E-Commerce </a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="/dashboard-crypto"><i class="fa-solid fa-arrow-right mx-4"></i>Crypto </a></li>
-                        </ul>
+
                     </li>
 
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="pages-profile.html">
-                            <i class="fa-solid fa-house"></i> <span class="align-middle">Profile</span>
+                        <a data-bs-target="#mstr" data-bs-toggle="collapse" class="sidebar-link" href="pages-profile.html">
+                            <i class="fa-solid fa-house"></i> <span class="align-middle">Master</span>
                         </a>
+                        <ul id="mstr" class="sidebar-dropdown list-unstyled collapse show" data-bs-parent="#sidebar">
+                            <li class="sidebar-item active">
+                                <a class="sidebar-link" href="<?= base_url('master/ruang'); ?>"><i class=" fa-solid fa-arrow-right mx-4"></i>Master Ruang</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="<?= base_url('master/rak'); ?>"><i class=" fa-solid fa-arrow-right mx-4"></i>Master Rak</a>
+                            </li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="/dashboard-crypto"><i class="fa-solid fa-arrow-right mx-4"></i>Crypto </a></li>
+                        </ul>
                     </li>
 
                     <li class="sidebar-item">
