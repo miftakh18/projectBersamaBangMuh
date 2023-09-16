@@ -1,3 +1,14 @@
+<?php
+$ci = &get_instance();
+$ci->load->model('Master_model', 'master');
+
+$angka = strlen(base_url()) - 16;
+$nama = $_SERVER['REQUEST_URI'];
+
+$active = substr($nama, $angka);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +23,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="shortcut icon" href="<?= assets_url(); ?>img/icons/icon-48x48.png" />
 
-    <title>AdminKit Demo - Bootstrap 5 Admin Template</title>
+    <title><?= (!empty($title) ? $title : 'Halaman Blank'); ?></title>
     <link href="<?= assets_url(); ?>css/app.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?= assets_url(); ?>css/template_custom.css">
@@ -33,100 +44,55 @@
                 </a>
 
                 <ul class="sidebar-nav">
-                    <li class="sidebar-header">
-                        Pages
-                    </li>
+                    <?php
+                    $header =  $ci->master->get_header();
 
-                    <li class="sidebar-item active">
+                    foreach ($header as $no => $hdr) :
+                    ?>
 
-                        <a class="sidebar-link">
-                            <i class="fa-solid fa-house"></i> <span class="align-middle">Dashboards</span>
-                        </a>
-
-                    </li>
-
-                    <li class="sidebar-item">
-                        <a data-bs-target="#mstr" data-bs-toggle="collapse" class="sidebar-link" href="pages-profile.html">
-                            <i class="fa-solid fa-house"></i> <span class="align-middle">Master</span>
-                        </a>
-                        <ul id="mstr" class="sidebar-dropdown list-unstyled collapse show" data-bs-parent="#sidebar">
-                            <li class="sidebar-item active">
-                                <a class="sidebar-link" href="<?= base_url('master/ruang'); ?>"><i class=" fa-solid fa-arrow-right mx-4"></i>Master Ruang</a>
+                        <?php $menu = $ci->master->get_menuByHeader($hdr->hid); ?>
+                        <?php foreach ($menu as $no => $mn) : ?>
+                            <li class="sidebar-header">
+                                <?= $hdr->nama_header; ?>
                             </li>
-                            <li class="sidebar-item">
-                                <a class="sidebar-link" href="<?= base_url('master/rak'); ?>"><i class=" fa-solid fa-arrow-right mx-4"></i>Master Rak</a>
-                            </li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="/dashboard-crypto"><i class="fa-solid fa-arrow-right mx-4"></i>Crypto </a></li>
-                        </ul>
-                    </li>
 
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="pages-sign-in.html">
-                            <i class="fa-solid fa-house"></i> <span class="align-middle">Sign In</span>
-                        </a>
-                    </li>
+                            <?php if ($mn->url == '#') : ?>
 
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="pages-sign-up.html">
-                            <i class="fa-solid fa-house"></i><span class="align-middle">Sign Up</span>
-                        </a>
-                    </li>
+                                <?php $smenu = $ci->master->get_smenuBymenudanHeader($hdr->hid, $mn->mid);
+                                $urlcari = array_column($smenu, 'url');
+                                //  var_dump($urlcari); 
+                                ?>
 
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="pages-blank.html">
-                            <i class="fa-solid fa-house"></i><span class="align-middle">Blank</span>
-                        </a>
-                    </li>
+                                <li class="sidebar-item  <?php if ($mn->url == $active) echo 'active'; ?>">
+                                    <a data-bs-target="#mstr<?= $no . $mn->mid; ?>" data-bs-toggle="collapse" class="sidebar-link  <?php if (in_array($active, $urlcari)) echo 'active'; ?>" href="pages-profile.html">
+                                        <?= $mn->icon; ?> <span class="align-middle"><?= $mn->nama_menu; ?></span>
+                                    </a>
+                                    <ul id="mstr<?= $no . $mn->mid; ?>" class="sidebar-dropdown list-unstyled collapse show " data-bs-parent="#sidebar">
+                                        <?php foreach ($smenu as $no => $smn) : ?>
+                                            <li class="sidebar-item <?php if ($smn->url == $active) echo 'active'; ?>">
+                                                <a class="sidebar-link" href="<?= base_url($smn->url); ?>"><i class=" fa-solid fa-arrow-right mx-4"></i><?= $smn->nama_submenu; ?></a>
 
-                    <li class="sidebar-header">
-                        Tools & Components
-                    </li>
+                                            </li>
 
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="ui-buttons.html">
-                            <i class="fa-solid fa-house"></i> <span class="align-middle">Buttons</span>
-                        </a>
-                    </li>
 
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="ui-forms.html">
-                            <i class="fa-solid fa-house"></i> <span class="align-middle">Forms</span>
-                        </a>
-                    </li>
+                                        <?php endforeach ?>
 
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="ui-cards.html">
-                            <i class="fa-solid fa-house"></i> <span class="align-middle">Cards</span>
-                        </a>
-                    </li>
+                                    </ul>
+                                </li>
 
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="ui-typography.html">
-                            <i class="fa-solid fa-house"></i><span class="align-middle">Typography</span>
-                        </a>
-                    </li>
+                            <?php else : ?>
+                                <li class="sidebar-item  <?php if ($mn->url == $active) echo 'active'; ?>">
 
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="icons-feather.html">
-                            <i class="fa-solid fa-house"></i><span class="align-middle">Icons</span>
-                        </a>
-                    </li>
+                                    <a class="sidebar-link <?php if ($mn->url == $active) echo 'active'; ?>" href="<?= base_url($mn->url); ?>">
+                                        <?= $mn->icon; ?> <span class="align-middle"><?= $mn->nama_menu; ?></span>
+                                    </a>
 
-                    <li class="sidebar-header">
-                        Plugins & Addons
-                    </li>
+                                </li>
+                            <?php endif; ?>
+                        <?php endforeach ?>
+                    <?php endforeach   ?>
 
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="charts-chartjs.html">
-                            <i class="fa-solid fa-house"></i><span class="align-middle">Charts</span>
-                        </a>
-                    </li>
 
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="maps-google.html">
-                            <i class="fa-solid fa-house"></i><span class="align-middle">Maps</span>
-                        </a>
-                    </li>
                 </ul>
 
                 <!-- <div class="sidebar-cta">
@@ -284,11 +250,11 @@
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
+                                <!-- <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
                                     <i class="align-middle" data-feather="settings"></i>
-                                </a>
+                                </a> -->
 
-                                <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
+                                <a class="nav-link dropdown-toggle d-none d-sm-inline-block prof" href="#" data-bs-toggle="dropdown">
                                     <img src="<?= assets_url(); ?>img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt=" img Charles Hall" /> <span class="text-dark">Charles Hall</span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end">

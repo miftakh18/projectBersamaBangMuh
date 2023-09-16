@@ -45,16 +45,3 @@
 <script src="<?= assets_url(); ?>datatable/button/js/buttons.bootstrap5.min.js"></script> -->
 <!-- <script src="<?= assets_url() ?>libs/datatables/jquery.dataTables.min.js"></script>
 <script src="<?= assets_url() ?>libs/datatables/jquery.dataTables.bootstrap4.js"></script> -->
-<script>
-    $(document).ready(function() {
-        // var table = $('#example').DataTable({
-        //     lengthChange: false,
-        //     buttons: ['copy', 'excel', 'pdf', 'colvis']
-        // });
-
-        new DataTable('#example');
-    })
-</script>
-</body>
-
-</html>

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Master extends CI_Controller
+class Akses extends CI_Controller
 {
     public function __Construct()
     {
@@ -11,21 +11,19 @@ class Master extends CI_Controller
         $this->load->library('upload');
     }
 
-    public function ruang()
+    public function index()
     {
 
         if ($this->session->userdata('poslogged')) {
-            //$res = $this->menu_model->getMenu();
-            $data = array(
-                'title' => 'Master Ruang',
-                // 'menu' => ,
-                'subtitle' => 'Master Ruang',
-                'alert' => false,
 
-            );
+            $data =
+                [
+                    'title' => 'Master Akses',
+                    'subtitle' => 'Akses Group',
+                    'alert' => false
+                ];
 
-            $this->load->view('page/ruang', ['data' => $data]);
-            // $this->load->view('footer');
+            $this->load->view('page/akses', ['data' => $data]);
         } else {
             $data = array(
                 'title' => 'Project 1',

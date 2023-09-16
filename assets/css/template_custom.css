@@ -1,140 +1,147 @@
-.sidebar  .sidebar-content{
-        box-shadow: -1px 6px 11px rgb(199, 199, 199);
+.sidebar .sidebar-content {
+    box-shadow: -1px 6px 11px rgb(199, 199, 199);
 }
+
 .sidebar .sidebar-content,
-.sidebar-brand,.sidebar-link
-{
-    background:#fff !important;
-    color :rgb(157, 157, 157) !important;
+.sidebar-brand,
+.sidebar-link {
+    background: #fff !important;
+    color: rgb(157, 157, 157) !important;
 
 }
+
 /* icon */
 .sidebar-link i,
 .sidebar-link svg,
 a.sidebar-link i,
-a.sidebar-link svg
-{
-    color:rgba(150, 150, 150, 0.5);
-    margin-right:.75rem
+a.sidebar-link svg {
+    color: rgba(150, 150, 150, 0.5);
+    margin-right: .75rem
 }
+
 /* .sidebar-link:focus
 {
     outline:0
 }  */
 
-.sidebar-link:hover
-{
-    color:#0cdbdb;
-    border-right:5px solid #0cdbdb;
- 
+.sidebar-link:hover {
+    color: #0cdbdb;
+    border-right: 5px solid #0cdbdb;
+
 
 }
 
 
 .sidebar-link:hover i,
 .sidebar-link:hover svg,
-.sidebar-link:hover span{
-    color:#0cdbdb;
+.sidebar-link:hover span {
+    color: #0cdbdb;
 
 
 }
 
-.sidebar-brand span{
-    color:#0cdbdb ;
+.sidebar-brand span {
+    color: #0cdbdb;
 
 }
-.sidebar-header{
-    color:rgba(100, 100, 100, 0.5) !important;
-    font-weight:bold;
+
+.sidebar-header {
+    color: rgba(100, 100, 100, 0.5) !important;
+    font-weight: bold;
 
 }
 
 
 .sidebar-toggle:hover .hamburger,
 .sidebar-toggle:hover .hamburger:after,
-.sidebar-toggle:hover .hamburger:before
-{
-    background:#0cdbdb
+.sidebar-toggle:hover .hamburger:before {
+    background: #0cdbdb
 }
 
 .sidebar-link,
-a.sidebar-link
-{
-     /* background:#0cdbdb; */
-    border-left:3px solid transparent;
-    color:rgba(6, 12, 17, 0.5);
-    cursor:pointer;
-    display:block;
-    font-weight:400;
-    padding:.625rem 1.625rem;
-    position:relative;
-    text-decoration:none;
+a.sidebar-link {
+    /* background:#0cdbdb; */
+    border-left: 3px solid transparent;
+    color: rgba(6, 12, 17, 0.5);
+    cursor: pointer;
+    display: block;
+    font-weight: 400;
+    padding: .625rem 1.625rem;
+    position: relative;
+    text-decoration: none;
     /* transition:background .1s ease-in-out */
 }
 
 
 .sidebar .sidebar-item.active .sidebar-link,
-.sidebar >.sidebar-item.active> .sidebar-link
-{
-    background:linear-gradient(90deg,rgba(121, 121, 121, 0.088),rgba(138, 138, 138, 0.088) 100%,transparent) !important;
+.sidebar>.sidebar-item.active>.sidebar-link {
+    background: linear-gradient(90deg, rgba(121, 121, 121, 0.088), rgba(138, 138, 138, 0.088) 100%, transparent) !important;
     /* background: blue !important; */
-    border-right:5px solid #0cdbdb !important;
-    color:#0cdbdb;
-font-weight: bold;
+    border-right: 0px solid #0cdbdb !important;
+    color: #0cdbdb;
+
     /* background-color: blue; */
 
 }
 
+.active {
+    border-right: 5px solid #0cdbdb !important;
+}
 
+.paginate_button.paginate_button.active {
+    border-right: 0 !important;
+}
 
 .sidebar-item.active .sidebar-link:hover i,
 .sidebar-item.active .sidebar-link:hover svg,
 .sidebar-item.active>.sidebar-link i,
 .sidebar-item.active>.sidebar-link svg,
-.sidebar-item.active>.sidebar-link span
-{
-    color:#0cdbdb;
+.sidebar-item.active>.sidebar-link span {
+    color: #0cdbdb;
     /* background-color: blue; */
 
 }
-.sidebar-brand
-{
-    color:#f8f9fa;
-    display:block;
-    font-size:1.15rem;
-    font-weight:600;
-    padding:1.15rem 1.5rem
+
+.sidebar-brand {
+    color: #f8f9fa;
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 600;
+    padding: 1.15rem 1.5rem
 }
 
 /* *:hover{
     color :#0cdbdb;
 } */
- .nav-icon:hover{
-    color :#0cdbdb;
-border-bottom: 3px solid  #0cdbdb;
+.nav-icon:hover {
+    color: #0cdbdb;
+    border-bottom: 3px solid #0cdbdb;
 }
 
-.dropdown-menu{
-    border:none;
+.dropdown-menu {
+    border: none;
 }
 
-.dropdown-menu .dropdown-item:hover{
-     background:linear-gradient(90deg,rgba(121, 121, 121, 0.088),rgba(138, 138, 138, 0.088) 100%,transparent) !important;
+.dropdown-menu .dropdown-item:hover {
+    background: linear-gradient(90deg, rgba(121, 121, 121, 0.088), rgba(138, 138, 138, 0.088) 100%, transparent) !important;
     /* background: blue !important; */
-    border-right:5px solid #0cdbdb !important;
-    color:#0cdbdb;
+    border-right: 5px solid #0cdbdb !important;
+    color: #0cdbdb;
 }
 
-.indicator{
+.indicator {
     background-color: #0cdbdb !important;
-    color:white;
+    color: white;
 }
-.collapsing{
+
+.collapsing {
     transition: height .35s ease;
 }
-.sidebar [aria-expanded="true"]::after, .sidebar [data-bs-toggle="collapse"]:not(.collapsed)::after {
-  top: 1.4rem;
-  transform: rotate(-135deg);
+
+.sidebar [aria-expanded="true"]::after,
+.sidebar [data-bs-toggle="collapse"]:not(.collapsed)::after {
+    top: 1.4rem;
+    transform: rotate(-135deg);
 }
 
 
@@ -149,28 +156,53 @@ border-bottom: 3px solid  #0cdbdb;
     display: inline-block;
     padding: 2px;
     position: absolute;
-    right: 1.5rem ;
-    top: 1.2rem ;
-    transform: rotate(45deg) ;
-    transition: all .2s ease-out ;
+    right: 1.5rem;
+    top: 1.2rem;
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
 }
-.sidebar-dropdown.collapse >.sidebar-item > .sidebar-link{
+
+.sidebar-dropdown.collapse>.sidebar-item>.sidebar-link {
 
     border-right: none !important;
     font-weight: normal !important;
-    color:rgb(135, 135, 135) !important;
+    color: rgb(135, 135, 135) !important;
 }
+
 .sidebar-dropdown.collapse>.sidebar-item.active>.sidebar-link {
 
     border-right: none !important;
     color: #0cdbdb !important;
     font-weight: normal !important;
 }
-.sidebar-dropdown.collapse>.sidebar-item:hover >.sidebar-link,
-.sidebar-dropdown.collapse>.sidebar-item:hover>.sidebar-link > svg  {
+
+.sidebar-dropdown.collapse>.sidebar-item:hover>.sidebar-link,
+.sidebar-dropdown.collapse>.sidebar-item:hover>.sidebar-link>svg {
 
     border-right: none !important;
     color: #070707 !important;
     font-weight: normal !important;
 }
 
+
+.dropdown-toggle.prof[data-bs-toggle="dropdown"]::after {
+    border: solid !important;
+    border-top-width: medium;
+    border-right-width: medium;
+    border-bottom-width: medium;
+    border-left-width: medium;
+    border-width: 0 2px 2px 0 !important;
+    display: inline-block !important;
+    padding: 2px !important;
+    transform: rotate(45deg) !important;
+
+}
+
+.dropdown-toggle.prof[data-bs-toggle="dropdown"]:hover::after {
+    color: #0cdbdb !important;
+}
+
+.btn-success {
+    background-color: #70dec8 !important;
+    border: none !important;
+}

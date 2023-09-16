@@ -1,8 +1,8 @@
-<?php $this->view('templates/header.php'); ?>
+<?php $this->view('templates/header.php', $data); ?>
 <main class="content">
     <div class="container-fluid p-0">
 
-        <h1 class="h3 mb-3">Master Ruang</h1>
+        <h1 class="h3 mb-3"><?= $data['subtitle']; ?></h1>
 
         <div class="row">
             <div class="col-12">
@@ -58,4 +58,15 @@
 
     </div>
 </main>
-<?php $this->view('templates/footer2.php') ?>
+<?php $this->view('templates/buildJS.php') ?>
+<script>
+    $(document).ready(function() {
+        // var table = $('#example').DataTable({
+        //     lengthChange: false,
+        //     buttons: ['copy', 'excel', 'pdf', 'colvis']
+        // });
+
+        new DataTable('.table');
+    })
+</script>
+<?php $this->view('templates/footer.php') ?>
